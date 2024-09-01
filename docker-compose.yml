@@ -1,0 +1,18 @@
+services:
+  api-guia:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    entrypoint: sh ./.docker/entrypoint.sh
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/usr/src/app
+    tty: true
+    restart: always
+    networks:
+      - guia-network
+
+networks:
+  guia-network:
+    driver: bridge
