@@ -1,13 +1,15 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
-import { AiModule } from './modules/ai/presentation/ai.module';
+import { OpenAiModule } from './modules/openai/presentation/openai.module';
+import { UserModule } from './modules/user/presentation/user.module';
 
 @Module({
   imports: [
     ConfigModule.forRoot({
       isGlobal: true,
     }),
-    AiModule,
+    OpenAiModule,
+    UserModule,
   ],
   controllers: [],
   providers: [],
