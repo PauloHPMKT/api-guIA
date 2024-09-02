@@ -1,6 +1,6 @@
+import OpenAI from 'openai';
 import { Provider } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
-import OpenAI from 'openai';
 
 export const makeOpenaiInstanceProvider = (): Provider[] => [
   {
