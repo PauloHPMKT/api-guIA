@@ -1,6 +1,6 @@
 import OpenAI from 'openai';
 import { Inject } from '@nestjs/common';
-import { CreateChatRepository } from '../../../../modules/user/application/repositories/create-chat.repository';
+import { CreateChatRepository } from '../../../user/application/protocols/create-chat.repository';
 import { CreateChatDto } from '../../../../modules/user/presentation/dto/create-chat.dto';
 
 export class OpenaiImplementation implements CreateChatRepository {

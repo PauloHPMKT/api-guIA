@@ -1,6 +1,7 @@
 import {
   Body,
   Controller,
+  Inject,
   InternalServerErrorException,
   Post,
 } from '@nestjs/common';
@@ -10,6 +11,7 @@ import { CreateUserDto } from '../dto/create-user.dto';
 @Controller('user')
 export class CreateUserController {
   constructor(
+    @Inject('CreateUserUseCaseDefault')
     private readonly createUserUseCase: CreateUserUseCaseImplementation,
   ) {}
 

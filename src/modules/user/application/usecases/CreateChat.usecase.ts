@@ -1,6 +1,6 @@
 import { Inject, Injectable } from '@nestjs/common';
 import { CreateChatDto } from '../../presentation/dto/create-chat.dto';
-import { CreateChatRepository } from '../repositories/create-chat.repository';
+import { CreateChatRepository } from '../protocols/create-chat.repository';
 
 @Injectable()
 export class CreateChatUsecase {
