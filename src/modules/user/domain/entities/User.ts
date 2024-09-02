@@ -1,5 +1,4 @@
 import { randomBytes } from 'node:crypto';
-import { UserModel } from '../model/user.model';
 
 export class User {
   public readonly _id: string;
@@ -10,7 +9,7 @@ export class User {
   public isActive?: boolean;
   public createdAt?: Date;
 
-  constructor(props: UserModel.ToCreate, id?: string) {
+  constructor(props: Omit<User, '_id'>, id?: string) {
     Object.assign(this, props);
     this._id = id || randomBytes(12).toString('hex');
     this.isActive = props.isActive ?? true;

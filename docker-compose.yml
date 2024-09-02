@@ -13,6 +13,19 @@ services:
     networks:
       - guia-network
 
+  db:
+    image: mongo:4.4
+    container_name: mongo-db
+    ports:
+      - 27017:27017
+    volumes:
+      - /mongodb/dbdata:/data/db
+      - /mongodb/configdb:/data/configdb
+    environment:
+      MONGO_INITDB_DATABASE: guia
+    networks:
+      - guia-network
+
 networks:
   guia-network:
     driver: bridge
