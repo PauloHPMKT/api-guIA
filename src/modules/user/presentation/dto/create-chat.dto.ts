@@ -7,7 +7,7 @@ class CreateMessageDto {
   content: string | null;
 }
 
-enum ChatRole {
+export enum ChatRole {
   SYSTEM = 'system',
   USER = 'user',
 }

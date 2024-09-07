@@ -7,6 +7,7 @@ import { CreateChatController } from './controllers/create-chat.controller';
 import { CreateUserController } from './controllers/create-user.controller';
 import { CreateChatUsecase } from '../application/usecases/CreateChat.usecase';
 import { ApplicationUseCaseProvider } from '../application/usecase.provider';
+import { ReviewerController } from './controllers/content-reviewer.controller';
 
 const providers: Provider[] = [
   ...makeUserModelProvider(),
@@ -17,7 +18,7 @@ const providers: Provider[] = [
 
 @Module({
   imports: [DatabaseModule, OpenAiModule],
-  controllers: [CreateUserController, CreateChatController],
+  controllers: [CreateUserController, CreateChatController, ReviewerController],
   providers,
   exports: [],
 })
